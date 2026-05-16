@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контроль знаний</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e6;
+            color: #2c3e20;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #8db86b;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+        header p { opacity: 0.9; }
+        main {
+            flex: 1;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #6b8a50;
+        }
+        .breadcrumb a { color: #8db86b; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { color: #3d5c28; margin: 28px 0 14px; font-size: 1.4rem; }
+        p, li { line-height: 1.7; font-size: 1rem; }
+        .task {
+            background-color: #ffffff;
+            border: 1px solid #b8d4a3;
+            padding: 20px;
+            margin: 18px 0;
+            border-radius: 8px;
+        }
+        .task-header {
+            font-weight: 700;
+            color: #3d5c28;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .task p { margin-bottom: 8px; }
+        details { margin-top: 10px; }
+        summary {
+            cursor: pointer;
+            color: #8db86b;
+            font-weight: 600;
+            padding: 6px 0;
+            user-select: none;
+        }
+        summary:hover { color: #6b9a4a; }
+        .answer {
+            background-color: #e8f4d8;
+            border: 1px dashed #8db86b;
+            padding: 12px 16px;
+            margin-top: 8px;
+            border-radius: 8px;
+            color: #2c3e20;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #8db86b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            padding: 18px;
+            background-color: #d4e8c0;
+            color: #5a7a3a;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        sup { font-size: 0.75em; }
+
+        /* Стили для кнопки контрольной работы */
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .control-btn {
+            display: inline-block;
+            background-color: #8db86b;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+        }
+        .control-btn:hover {
+            background-color: #7aa558;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(141, 184, 107, 0.35);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Контроль знаний</h1>
+        <p>Проверочные задания по разделу</p>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Главная</a> / Контроль знаний
+        </div>
+
+        <h2>Тема 1: Степень с натуральным показателем</h2>
+
+        <div class="task">
+            <div class="task-header">Задание 1. Вычислите:</div>
+            <p>а) 3<sup>4</sup></p>
+            <p>б) (-2)<sup>5</sup></p>
+            <p>в) 10<sup>3</sup></p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) 3<sup>4</sup> = 3 &middot; 3 &middot; 3 &middot; 3 = 81</p>
+                    <p>б) (-2)<sup>5</sup> = (-2) &middot; (-2) &middot; (-2) &middot; (-2) &middot; (-2) = -32</p>
+                    <p>в) 10<sup>3</sup> = 1 000</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task">
+            <div class="task-header">Задание 2. Упростите выражение:</div>
+            <p>а) x<sup>7</sup> &middot; x<sup>4</sup></p>
+            <p>б) (a<sup>3</sup>)<sup>5</sup></p>
+            <p>в) (2y)<sup>3</sup></p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) x<sup>7</sup> &middot; x<sup>4</sup> = x<sup>11</sup></p>
+                    <p>б) (a<sup>3</sup>)<sup>5</sup> = a<sup>15</sup></p>
+                    <p>в) (2y)<sup>3</sup> = 8y<sup>3</sup></p>
+                </div>
+            </details>
+        </div>
+
+        <h2>Тема 2: Степень с целым показателем</h2>
+
+        <div class="task">
+            <div class="task-header">Задание 3. Вычислите:</div>
+            <p>а) 5<sup>-2</sup></p>
+            <p>б) (1/4)<sup>-1</sup></p>
+            <p>в) 12<sup>0</sup></p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) 5<sup>-2</sup> = 1 / 25</p>
+                    <p>б) (1/4)<sup>-1</sup> = 4</p>
+                    <p>в) 12<sup>0</sup> = 1</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task">
+            <div class="task-header">Задание 4. Упростите выражение:</div>
+            <p>а) 2<sup>-3</sup> &middot; 2<sup>5</sup></p>
+            <p>б) a<sup>-2</sup> &middot; a<sup>-4</sup></p>
+            <p>в) (3<sup>-2</sup>)<sup>-1</sup></p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) 2<sup>-3</sup> &middot; 2<sup>5</sup> = 2<sup>2</sup> = 4</p>
+                    <p>б) a<sup>-2</sup> &middot; a<sup>-4</sup> = a<sup>-6</sup> = 1 / a<sup>6</sup></p>
+                    <p>в) (3<sup>-2</sup>)<sup>-1</sup> = 3<sup>2</sup> = 9</p>
+                </div>
+            </details>
+        </div>
+
+        <h2>Тема 3: Стандартный вид числа</h2>
+
+        <div class="task">
+            <div class="task-header">Задание 5. Запишите число в стандартном виде:</div>
+            <p>а) 54 000</p>
+            <p>б) 0,000 37</p>
+            <p>в) 8 200 000</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) 54 000 = 5,4 &middot; 10<sup>4</sup></p>
+                    <p>б) 0,000 37 = 3,7 &middot; 10<sup>-4</sup></p>
+                    <p>в) 8 200 000 = 8,2 &middot; 10<sup>6</sup></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task">
+            <div class="task-header">Задание 6. Сравните числа:</div>
+            <p>а) 2,5 &middot; 10<sup>6</sup> и 3,1 &middot; 10<sup>5</sup></p>
+            <p>б) 4,7 &middot; 10<sup>-3</sup> и 4,9 &middot; 10<sup>-3</sup></p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="answer">
+                    <p>а) 2,5 &middot; 10<sup>6</sup> &gt; 3,1 &middot; 10<sup>5</sup> (порядок 6 больше порядка 5)</p>
+                    <p>б) 4,7 &middot; 10<sup>-3</sup> &lt; 4,9 &middot; 10<sup>-3</sup> (порядки равны, мантисса 4,7 меньше 4,9)</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="btn-container">
+            <a href="7Akr1.html" class="control-btn">Решить контрольную работу</a>
+        </div>
+
+        <a href="index.html" class="back-link">&larr; Вернуться на главную</a>
+    </main>
+
+    <footer>
+        Учебный материал по алгебре &copy; 2026
+    </footer>
+
+</body>
+</html>
