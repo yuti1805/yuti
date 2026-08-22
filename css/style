@@ -1,0 +1,432 @@
+/* --- Сброс и базовые настройки --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Контейнер --- */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* --- Шапка сайта (Header) --- */
+.header {
+    /* --- Новые свойства для закрепления --- */
+    position: sticky; /* Элемент становится "липким" */
+    top: 0;           /* Приклеивается к самому верху окна */
+    z-index: 1000;    /* Гарантирует, что шапка будет поверх всех карточек */
+    
+    /* --- Старые свойства оформления --- */
+    background-color: var(--color-bg-header);
+    border-bottom: 2px solid var(--color-primary-light);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* --- Навигация --- */
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+/* --- Основной контент (Main) --- */
+.main {
+    flex: 1; /* Прижимает футер к низу */
+    padding: var(--spacing-lg) 0;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+    border-left: 5px solid var(--color-primary);
+    padding-left: var(--spacing-sm);
+}
+
+/* --- Карточки уроков/тем --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(139, 195, 74, 0.2); /* Зелёная тень */
+    border-color: var(--color-primary);
+}
+
+.card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary-dark);
+}
+
+.card__text {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+/* --- Кнопки --- */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary-dark);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-primary-light);
+}
+
+/* --- Специфика для математики --- */
+.math-formula {
+    font-family: var(--font-math);
+    font-style: italic;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    display: inline-block;
+    margin: var(--spacing-xs) 0;
+    color: #2E7D32; /* Тёмно-зелёный для контраста формулы */
+}
+
+.math-block {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--color-primary-dark);
+    background-color: #fff;
+}
+
+/* --- Подвал (Footer) --- */
+.footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-lg) 0;
+    margin-top: auto;
+}
+
+.footer__inner {
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.footer__copy {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.footer__links a {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    margin-left: var(--spacing-md);
+}
+
+.footer__links a:hover {
+    text-decoration: underline;
+}
+/* --- Навигация "Назад" --- */
+.back-navigation {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.back-link:hover {
+    color: var(--color-primary);
+    transform: translateX(-5px);
+}
+
+.back-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* --- Карточки уроков/тем --- */
+.cards-grid {
+    display: flex;           /* Заменено с grid на flex */
+    flex-wrap: wrap;         /* Разрешаем перенос на новую строку */
+    justify-content: center; /* Автоматически центрирует все элементы, включая последний */
+    gap: var(--spacing-md);
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    /* Адаптивная ширина: минимум 300px, растягивается, но не шире 400px */
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(139, 195, 74, 0.2);
+    border-color: var(--color-primary);
+}
+
+.card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary-dark);
+}
+
+.card__text {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+/* Адаптация карточек */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;   /* Одна карточка на всю ширину */
+        max-width: 100%;
+        padding: var(--spacing-sm);
+    }
+    
+    .card__title {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Планшеты (промежуточный размер) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(50% - var(--spacing-md)); /* 2 карточки в ряд */
+        max-width: 450px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .page-title {
+        font-size: 1.3rem;
+        padding-left: var(--spacing-xs);
+    }
+    
+    .fact-block {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs);
+    }
+}
+/* --- Крупный логотип в шапке --- */
+.logo--large {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- Кнопки-ссылки в навигации --- */
+.nav__link--button {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+}
+
+.nav__link--button:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-inverse);
+}
+
+/* --- Заголовок "Выберите учебный раздел" --- */
+.hub-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- Сетка карточек классов --- */
+.classes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Квадратная карточка класса --- */
+.class-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    background-color: var(--color-bg-card);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--color-primary-light);
+    box-shadow: 0 6px 16px rgba(139, 195, 74, 0.3);
+}
+
+.class-card span {
+    display: block;
+}
+
+.class-card__number {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+}
+
+.class-card__label {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* --- Адаптация карточек классов --- */
+@media (max-width: 768px) {
+    .logo--large {
+        font-size: 1.5rem;
+    }
+
+    .hub-title {
+        font-size: 1.6rem;
+    }
+
+    .class-card {
+        width: 160px;
+        height: 160px;
+        font-size: 1.4rem;
+    }
+
+    .class-card__number {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .class-card {
+        width: 140px;
+        height: 140px;
+    }
+}
+@media (max-width: 768px) {
+    .header__inner {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .nav__list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
