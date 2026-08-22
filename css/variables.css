@@ -1,0 +1,36 @@
+:root {
+    /* --- Цветовая палитра (Нежно-салатовая гамма) --- */
+    
+    /* Основные цвета */
+    --color-primary: #8BC34A;       /* Спокойный салатовый (основа бренда) */
+    --color-primary-dark: #689F38;  /* Тёмно-зелёный для ховера и акцентов */
+    --color-primary-light: #DCEDC8; /* Очень светлый фон для блоков */
+    
+    /* Фоны */
+    --color-bg-body: #F1F8E9;       /* Светло-мятный фон всей страницы (глаза не устают) */
+    --color-bg-card: #FFFFFF;       /* Белый фон для карточек с контентом */
+    --color-bg-header: #FFFFFF;     /* Фон шапки */
+    
+    /* Текст */
+    --color-text-main: #333333;     /* Тёмно-серый для основного текста (мягче чёрного) */
+    --color-text-secondary: #555555;/* Серый для подписей */
+    --color-text-inverse: #FFFFFF;  /* Белый текст на зелёном фоне */
+    
+    /* Дополнительные элементы */
+    --color-border: #C5E1A5;        /* Цвет рамок и разделителей */
+    --color-focus: #AED581;         /* Цвет обводки при фокусе на полях ввода */
+    
+    /* --- Типографика --- */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-math: 'Times New Roman', Times, serif; /* Для формул */
+    
+    /* --- Отступы и размеры --- */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+    
+    --border-radius: 8px;
+    --container-width: 1200px;
+}
